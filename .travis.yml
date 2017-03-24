@@ -14,10 +14,9 @@ matrix:
    - rvm: 2.2.3
      gemfile: Gemfile.rails40
      env: J=ONE
-
-   - rvm:2.3.3
-     gemfile: Gemfile.rails41
-     env: J=TWO
+#   - rvm:2.3.3
+#     gemfile: Gemfile.rails41
+#     env: J=TWO
  
 #rvm:
 #- 2.2.3
