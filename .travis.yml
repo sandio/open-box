@@ -9,13 +9,23 @@ before_install:
 install:
   - echo "install .."
 
-rvm:
-- 2.2.3
-- 2.3.3
+matrix:
+  include:
+   - rvm: 2.2.3
+     gemfile: Gemfile.rails40
+     env: J=ONE
 
-gemfile:
- - Gemfile.rails40
- - Gemfile.rails41
+   - rvm:2.3.3
+     gemfile: Gemfile.rails41
+     env: J=TWO
+ 
+#rvm:
+#- 2.2.3
+#- 2.3.3
+
+#gemfile:
+# - Gemfile.rails40
+# - Gemfile.rails41
  
 #env:
 #  matrix:
@@ -27,4 +37,4 @@ script:
   - printenv > printenv.txt
  
 after_script:
-  - testspace ["Job $TRAVIS_JOB_NUMBER"]test.xml "+printenv.txt{environment variables}"
+  - testspace ["$J - $TRAVIS_JOB_NUMBER"]test.xml "+printenv.txt{environment variables}"
