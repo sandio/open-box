@@ -11,11 +11,15 @@ install:
 
 rvm:
 - 2.2.3
+  R=2.2.3
 - 2.3.3
+  R=2.3.3
 
 gemfile:
  - Gemfile.rails40
+   G=rails40
  - Gemfile.rails41
+   G=rails41
  
 #env:
 #  matrix:
@@ -24,6 +28,7 @@ gemfile:
   
 script:
   - echo "script .."
+  - echo "JOB equals .. $R-$G"
   - printenv > printenv.txt
  
 after_script:
