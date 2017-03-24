@@ -19,4 +19,4 @@ script:
   - printenv > printenv.txt
  
 after_script:
-  - testspace [$TRAVIS_JOB_NUMBER]test.xml "+printenv.txt{environment variables}"
+  - testspace ["Job $TRAVIS_JOB_NUMBER"]test.xml "+printenv.txt{environment variables}"
