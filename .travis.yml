@@ -13,10 +13,10 @@ matrix:
    include:
    - rvm: 2.2.3
      gemfile: Gemfile.rails40
-     env: J=ONE
+#     env: J=ONE
    - rvm: 2.3.3
      gemfile: Gemfile.rails41
-     env: J=TWO
+#     env: J=TWO
 
 #rvm:
 #- 2.2.3
@@ -36,4 +36,4 @@ script:
   - printenv > printenv.txt
  
 after_script:
-  - testspace ["$J - $TRAVIS_JOB_NUMBER"]test.xml "+.travis.yml{build script}" "+printenv.txt{environment variables}" 
+  - testspace ["$TRAVIS_JOB_NUMBER"]test.xml "+.travis.yml{build script}" "+printenv.txt{environment variables}" 
