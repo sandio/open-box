@@ -9,22 +9,22 @@ before_install:
 install:
   - echo "install .."
 
-matrix:
-   include:
-   - rvm: 2.2.3
-     gemfile: Gemfile.rails40
+#matrix:
+#   include:
+#   - rvm: 2.2.3
+#     gemfile: Gemfile.rails40
 #     env: J=ONE
-   - rvm: 2.3.3
-     gemfile: Gemfile.rails41
-     env: J=TWO
+#   - rvm: 2.3.3
+#     gemfile: Gemfile.rails41
+#     env: J=TWO
 
-#rvm:
-#- 2.2.3
-#- 2.3.3
+rvm:
+ - 2.2.3
+ - 2.3.3
 
-#gemfile:
-# - Gemfile.rails40
-# - Gemfile.rails41
+gemfile:
+ - Gemfile.rails40
+ - Gemfile.rails41
  
 #env:
 #  matrix:
