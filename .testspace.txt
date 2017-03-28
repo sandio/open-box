@@ -1,5 +1,2 @@
-analysis.xml
 [$JOB]test.xml
-"+.travis.yml{build script}" 
 "+printenv.txt{environment variables}"
-coverage.xml

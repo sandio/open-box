@@ -54,11 +54,13 @@ matrix:
      env: JOB="Ruby 2.3.3 Rails 42" 
    - rvm: 2.3.3  
      gemfile: Gemfile.rails50 
-     env: JOB="Ruby 2.3.3 Rails 50" 
+     env: JOB="Ruby 2.3.3 Rails 50" METRICS=true
 
 script:
   - echo "script .."
   - printenv > printenv.txt
  
 after_script:
-  - testspace @.testspace.txt 
+  - RESULTS="@.testspace.txt"
+  - if [ "${METRICS.}" -eq "true" ] ; then RESULTS="@.testspace-metrics.txt" ; fi
+  - testspace $RESULTS 
