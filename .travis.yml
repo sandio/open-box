@@ -26,6 +26,10 @@ gemfile:
  - Gemfile.rails40
  - Gemfile.rails41
  
+env:
+ - JOB=ONE
+ - JOB=TWO
+ 
 #env:
 #  matrix:
 #   - JOB=ABC
