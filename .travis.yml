@@ -9,35 +9,18 @@ before_install:
 install:
   - echo "install .."
 
-#matrix:
-#   include:
-#   - rvm: 2.2.3
-#     gemfile: Gemfile.rails40
-#     env: J=ONE
-#   - rvm: 2.3.3
-#     gemfile: Gemfile.rails41
-#     env: J=TWO
+matrix:
+  include:
+   - rvm: 2.1  
+     gemfile: Gemfile.rails50 
+     env: JOB="Ruby 2.1 Rails 50"  metric=true
+   - rvm: 2.2.3  
+     gemfile: Gemfile.rails50 
+     env: JOB="Ruby 2.2.3 Rails 50"  metric=true
 
-rvm:
- - 2.2.3
- - 2.3.3
-
-gemfile:
- - Gemfile.rails40
- - Gemfile.rails41
- 
-env:
- - JOB=ONE
- - JOB=TWO
- 
-#env:
-#  matrix:
-#   - JOB=ABC
-#   - JOB=DEF
-  
 script:
   - echo "script .."
   - printenv > printenv.txt
  
 after_script:
-  - testspace ["$TRAVIS_JOB_NUMBER"]test.xml "+.travis.yml{build script}" "+printenv.txt{environment variables}" 
+  - testspace ["$JOB"]test.xml "+.travis.yml{build script}" "+printenv.txt{environment variables}" 
