@@ -62,5 +62,5 @@ script:
  
 after_script:
   - RESULTS="@.testspace.txt"
-  - if [ "${METRICS.}" -eq "true" ] ; then RESULTS="@.testspace-metrics.txt" ; fi
+  - if [ "${METRICS}" -eq "true" ] ; then RESULTS="@.testspace-metrics.txt" ; fi
   - testspace $RESULTS 
