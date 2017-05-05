@@ -9,58 +9,9 @@ before_install:
 install:
   - echo "install .."
 
-matrix:
-  include:
-   - rvm: 2.1  
-     gemfile: Gemfile.rails32 
-     env: JOB="Ruby 2.1 Rails 32"  
-   - rvm: 2.1  
-     gemfile: Gemfile.rails40 
-     env: JOB="Ruby 2.1 Rails 40" 
-   - rvm: 2.1  
-     gemfile: Gemfile.rails41 
-     env: JOB="Ruby 2.1 Rails 41" 
-   - rvm: 2.1  
-     gemfile: Gemfile.rails42 
-     env: JOB="Ruby 2.1 Rails 42" 
-
-   - rvm: 2.2.3  
-     gemfile: Gemfile.rails32 
-     env: JOB="Ruby 2.2.3 Rails 32"  
-   - rvm: 2.2.3  
-     gemfile: Gemfile.rails40 
-     env: JOB="Ruby 2.2.3 Rails 40" 
-   - rvm: 2.2.3  
-     gemfile: Gemfile.rails41 
-     env: JOB="Ruby 2.2.3 Rails 41" 
-   - rvm: 2.2.3  
-     gemfile: Gemfile.rails42 
-     env: JOB="Ruby 2.2.3 Rails 42" 
-   - rvm: 2.2.3  
-     gemfile: Gemfile.rails50 
-     env: JOB="Ruby 2.2.3 Rails 50" 
-
-   - rvm: 2.3.3  
-     gemfile: Gemfile.rails32 
-     env: JOB="Ruby 2.3.3 Rails 32"  
-   - rvm: 2.3.3  
-     gemfile: Gemfile.rails40 
-     env: JOB="Ruby 2.3.3 Rails 40" 
-   - rvm: 2.3.3  
-     gemfile: Gemfile.rails41 
-     env: JOB="Ruby 2.3.3 Rails 41" 
-   - rvm: 2.3.3  
-     gemfile: Gemfile.rails42 
-     env: JOB="Ruby 2.3.3 Rails 42" 
-   - rvm: 2.3.3  
-     gemfile: Gemfile.rails50 
-     env: JOB="Ruby 2.3.3 Rails 50" METRICS=YES
-
 script:
   - echo "script .."
   - printenv > printenv.txt
  
 after_script:
-  - RESULTS="@.testspace.txt"
-  - if [ "$METRICS" = "YES" ] ; then RESULTS="@.testspace-metrics.txt" ; fi
-  - testspace $RESULTS 
+  - testspace @.testspace.txt
