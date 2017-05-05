@@ -4,7 +4,7 @@ cache: bundler
 before_install:
   - mkdir -p $HOME/bin
   - curl -s https://testspace-client.s3.amazonaws.com/testspace-linux-dev.tgz | tar -zxvf- -C $HOME/bin
-  - testspace config url sandio.stridespace.com
+  - testspace config url http://sandio.stridespace.com
 
 install:
   - echo "install .."
