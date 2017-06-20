@@ -6,3 +6,5 @@ open testspace enable test box
 * force build checking for auto-close
 
 * another try - with correct setting
+
+test
