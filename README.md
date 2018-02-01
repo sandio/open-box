@@ -7,4 +7,4 @@ open testspace enable test box
 
 * another try - with correct setting
 
-test test
+test test test
